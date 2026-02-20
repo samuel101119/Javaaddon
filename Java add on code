@@ -1,0 +1,97 @@
+package Sumofarray;
+
+import java.util.Scanner;
+
+public class SumOfArray {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Enter the number of elements: ");
+        int n = sc.nextInt();
+
+        int[] arr = new int[n];
+        int sum = 0;
+
+        System.out.println("Enter the elements:");
+
+        for (int i = 0; i < n; i++) {
+            arr[i] = sc.nextInt();
+            sum += arr[i];
+        }
+
+        System.out.println("Sum of array elements = " + sum);
+
+        sc.close();
+    }
+}
+
+
+
+
+
+
+
+
+
+
+package reversenumber;
+
+import java.util.Scanner;
+
+public class ReverseNumber {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Enter a number: ");
+        int number = sc.nextInt();
+
+        int reverse = 0;
+
+        while (number != 0) {
+            int digit = number % 10;
+            reverse = reverse * 10 + digit;
+            number = number / 10;
+        }
+
+        System.out.println("Reversed number = " + reverse);
+
+        sc.close();
+    }
+}
+
+
+
+
+
+
+
+package occurenceofelement;
+
+import java.util.Scanner;
+
+public class DigitOccurrence {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Enter a number: ");
+        String number = sc.nextLine();   // Take input as String
+
+        int[] count = new int[10];  // Array to store digit count (0-9)
+
+        // Count each digit
+        for (int i = 0; i < number.length(); i++) {
+            char ch = number.charAt(i);
+            int digit = ch - '0';
+            count[digit]++;
+        }
+
+        // Print occurrence
+        for (int i = 0; i < 10; i++) {
+            if (count[i] > 0) {
+                System.out.println(i + " - " + count[i] + " time(s)");
+            }
+        }
+
+        sc.close();
+    }
+}
